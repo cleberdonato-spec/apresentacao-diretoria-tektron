@@ -8,10 +8,12 @@
 html,body{height:100%}
 body{font-family:Montserrat,system-ui,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg);overflow:hidden}
 .deck{height:100vh;position:relative}
-.slide{position:absolute;inset:0;padding:6vh 7vw 9vh;display:none;flex-direction:column;overflow:auto}
-.slide.on{display:flex;animation:in .35s ease}
+.slide{position:absolute;inset:0;padding:6vh 7vw 9vh;display:none;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;box-sizing:border-box}
+.slide.on{display:block;animation:in .35s ease}
+.slide.cover{display:none;flex-direction:column;justify-content:center}
+.slide.cover.on{display:flex}
 @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.cover{background:linear-gradient(135deg,var(--or) 0%,#F7791F 60%,var(--ye) 100%);color:#fff;justify-content:center}
+.cover{background:linear-gradient(135deg,var(--or) 0%,#F7791F 60%,var(--ye) 100%);color:#fff}
 .cover h1{font-size:clamp(2rem,5vw,3.8rem);font-weight:800;line-height:1.1;max-width:18ch}
 .cover p{margin-top:2vh;font-size:clamp(1rem,1.6vw,1.4rem);max-width:46ch;opacity:.95}
 .tag{display:inline-block;background:#fff;color:var(--or);font-weight:700;font-size:.8rem;padding:.4em 1em;border-radius:99px;margin-bottom:3vh;width:max-content}
@@ -58,7 +60,8 @@ html,body{height:100%;height:100dvh;-webkit-text-size-adjust:100%}
 img.shot{height:auto;max-width:100%}
 .dots{max-width:46vw;overflow:hidden}
 @media (max-width:760px){
- .slide{padding:4vh 18px calc(76px + env(safe-area-inset-bottom))}
+ .slide{padding:4vh 18px calc(110px + env(safe-area-inset-bottom, 24px)) !important}
+ .slide::after{content:"";display:block;height:calc(96px + env(safe-area-inset-bottom, 20px));min-height:96px;width:100%;clear:both}
  .cover h1{font-size:2rem}
  .cover p{font-size:1rem}
  h2{font-size:1.45rem}
@@ -72,9 +75,10 @@ img.shot{height:auto;max-width:100%}
  .link{padding:16px 18px;font-size:1rem}
  .aviso,.rule{font-size:.84rem}
  table,tbody,tr,td{display:block;width:100%}
- table{background:transparent}
+ table{background:transparent;margin-bottom:20px}
  tr:first-child{display:none}
  tr{background:#fff;border:1px solid var(--ln);border-radius:14px;margin-bottom:12px;padding:6px 0;overflow:hidden}
+ tr:last-child{margin-bottom:28px}
  td{border:0;padding:6px 16px;font-size:.88rem}
  td::before{content:attr(data-label);display:block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--or);margin-bottom:2px}
  .cmp td:first-child{width:100%;font-size:1rem;background:#FFF3E6}
