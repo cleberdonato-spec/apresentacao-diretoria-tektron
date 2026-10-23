@@ -8,12 +8,10 @@
 html,body{height:100%}
 body{font-family:Montserrat,system-ui,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg);overflow:hidden}
 .deck{height:100vh;position:relative}
-.slide{position:absolute;inset:0;padding:6vh 7vw 9vh;display:none;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;box-sizing:border-box}
-.slide.on{display:block;animation:in .35s ease}
-.slide.cover{display:none;flex-direction:column;justify-content:center}
-.slide.cover.on{display:flex}
+.slide{position:absolute;inset:0;padding:6vh 7vw 9vh;display:none;flex-direction:column;overflow:auto}
+.slide.on{display:flex;animation:in .35s ease}
 @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.cover{background:linear-gradient(135deg,var(--or) 0%,#F7791F 60%,var(--ye) 100%);color:#fff}
+.cover{background:linear-gradient(135deg,var(--or) 0%,#F7791F 60%,var(--ye) 100%);color:#fff;justify-content:center}
 .cover h1{font-size:clamp(2rem,5vw,3.8rem);font-weight:800;line-height:1.1;max-width:18ch}
 .cover p{margin-top:2vh;font-size:clamp(1rem,1.6vw,1.4rem);max-width:46ch;opacity:.95}
 .tag{display:inline-block;background:#fff;color:var(--or);font-weight:700;font-size:.8rem;padding:.4em 1em;border-radius:99px;margin-bottom:3vh;width:max-content}
@@ -60,8 +58,7 @@ html,body{height:100%;height:100dvh;-webkit-text-size-adjust:100%}
 img.shot{height:auto;max-width:100%}
 .dots{max-width:46vw;overflow:hidden}
 @media (max-width:760px){
- .slide{padding:4vh 18px calc(110px + env(safe-area-inset-bottom, 24px)) !important}
- .slide::after{content:"";display:block;height:calc(96px + env(safe-area-inset-bottom, 20px));min-height:96px;width:100%;clear:both}
+ .slide{padding:4vh 18px calc(76px + env(safe-area-inset-bottom))}
  .cover h1{font-size:2rem}
  .cover p{font-size:1rem}
  h2{font-size:1.45rem}
@@ -75,10 +72,9 @@ img.shot{height:auto;max-width:100%}
  .link{padding:16px 18px;font-size:1rem}
  .aviso,.rule{font-size:.84rem}
  table,tbody,tr,td{display:block;width:100%}
- table{background:transparent;margin-bottom:20px}
+ table{background:transparent}
  tr:first-child{display:none}
  tr{background:#fff;border:1px solid var(--ln);border-radius:14px;margin-bottom:12px;padding:6px 0;overflow:hidden}
- tr:last-child{margin-bottom:28px}
  td{border:0;padding:6px 16px;font-size:.88rem}
  td::before{content:attr(data-label);display:block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--or);margin-bottom:2px}
  .cmp td:first-child{width:100%;font-size:1rem;background:#FFF3E6}
@@ -113,21 +109,21 @@ img.shot{height:auto;max-width:100%}
   <p class="sub">Demandas recebidas pelo WhatsApp e registradas na planilha <a class="ref" href="https://docs.google.com/spreadsheets/d/1e4zUJfBMnibRlW0yqdHA0kNGorA1llNnDvQOG8Eqxbw/edit" target="_blank" rel="noopener">Registro de Demandas WhatsApp</a> (abas diárias de 20, 21, 22 e <a class="ref" href="https://docs.google.com/spreadsheets/d/1e4zUJfBMnibRlW0yqdHA0kNGorA1llNnDvQOG8Eqxbw/edit#gid=1806283822" target="_blank" rel="noopener">23/10</a> e <a class="ref" href="https://docs.google.com/spreadsheets/d/1e4zUJfBMnibRlW0yqdHA0kNGorA1llNnDvQOG8Eqxbw/edit#gid=675402587" target="_blank" rel="noopener">Painel semanal</a>).</p><div class="aviso"><b>Acesso às planilhas:</b> os links desta apresentação exigem login em uma conta corporativa da Tektron (@grupotektron.com.br). A planilha geral de controle é a <a class="ref" href="https://docs.google.com/spreadsheets/d/1nYeWhNf-fk_efT0tGpDyu6YHXz4JbBl1RxgSnr2aL9o/edit" target="_blank" rel="noopener">Controle Geral – Cléber 2026</a>.</div>
   <div class="grid">
     <div class="card kpi"><b>95</b><span>demandas registradas</span></div>
-    <div class="card kpi ok"><b>62</b><span>atendidas</span></div>
-    <div class="card kpi wr"><b>25</b><span>em andamento</span></div>
+    <div class="card kpi ok"><b>67</b><span>atendidas</span></div>
+    <div class="card kpi wr"><b>20</b><span>em andamento</span></div>
     <div class="card kpi bd"><b>8</b><span>pendentes</span></div>
   </div>
   <div class="card" style="margin-top:18px">
     <h3>Andamento por dia</h3>
     <div class="bars">
-      <div class="bar"><span>20/10</span><div class="trk"><i class="a" style="width:87.5%"></i><i class="b" style="width:8.3%"></i><i class="c" style="width:4.2%"></i></div><span class="bn">24 demandas</span></div>
+      <div class="bar"><span>20/10</span><div class="trk"><i class="a" style="width:91.7%"></i><i class="b" style="width:4.2%"></i><i class="c" style="width:4.2%"></i></div><span class="bn">24 demandas</span></div>
       <div class="bar"><span>21/10</span><div class="trk"><i class="a" style="width:71.9%"></i><i class="b" style="width:21.9%"></i><i class="c" style="width:6.2%"></i></div><span class="bn">32 demandas</span></div>
-      <div class="bar"><span>22/10</span><div class="trk"><i class="a" style="width:76.2%"></i><i class="b" style="width:23.8%"></i></div><span class="bn">21 demandas</span></div>
-      <div class="bar"><span>23/10</span><div class="trk"><i class="a" style="width:11.1%"></i><i class="b" style="width:61.1%"></i><i class="c" style="width:27.8%"></i></div><span class="bn">18 demandas (parcial)</span></div>
+      <div class="bar"><span>22/10</span><div class="trk"><i class="a" style="width:85.7%"></i><i class="b" style="width:14.3%"></i></div><span class="bn">21 demandas</span></div>
+      <div class="bar"><span>23/10</span><div class="trk"><i class="a" style="width:22.2%"></i><i class="b" style="width:50%"></i><i class="c" style="width:27.8%"></i></div><span class="bn">18 demandas (parcial)</span></div>
     </div>
     <div class="legend"><span><em class="a"></em>Atendidas</span><span><em class="b"></em>Em andamento</span><span><em class="c"></em>Pendentes</span></div>
   </div>
-  <p class="note">Status reavaliados em 23/10: as propostas do Now (Praça C-8) e do Ilhas Cayman que já haviam chegado passaram de "em andamento" para "atendida" nas abas de 21 e 22/10 (22/10 fechou com 16 atendidas, 5 em andamento). O dia 23/10 está parcial (até 16h30) e concentra cotações recém-disparadas, o que explica as 5 pendências do dia.</p><p class="note">Base: 137 condomínios e 17 prestadores quarteirizados (caixa de gordura, caixa d'água, dedetização, prumadas, jardim, piscina e vidros em altura).</p>
+  <p class="note">Status reavaliados em 23/10: as propostas do Now (Praça C-8) e do Ilhas Cayman que já haviam chegado passaram de "em andamento" para "atendida" nas abas de 21 e 22/10 (22/10 fechou com 18 atendidas, 3 em andamento). O dia 23/10 está parcial (até 16h30) e concentra cotações recém-disparadas, o que explica as 5 pendências do dia.</p><p class="note">Base: 137 condomínios e 17 prestadores quarteirizados (caixa de gordura, caixa d'água, dedetização, prumadas, jardim, piscina e vidros em altura).</p>
 </section>
 
 <section class="slide">
@@ -171,7 +167,7 @@ img.shot{height:auto;max-width:100%}
     <div class="card"><h3>Orçamento de cinco serviços</h3><p>Cotação para um novo condomínio enviada a 13 prestadores; propostas recebidas por pacote, aguardando consolidação.</p></div>
     <div class="card"><h3>Novas cotações em 23/10</h3><p>Residencial Villa de Leyva (5 serviços) e The Prime Tamandaré (3 serviços) disparadas aos prestadores homologados; primeira proposta já recebida, demais em espera.</p></div>
     <div class="card"><h3>Ilhas Cayman e vencimentos</h3><p>Valores do Ilhas Cayman recebidos de dois prestadores em 23/10; outro visita na segunda (26/10), prazo máximo. CND Estadual (vence em 26/10) e ASO (vence em 06/11) cobrados de dois prestadores.</p></div>
-    <div class="card"><h3>Cancelamento de jardinagem</h3><p>Pontal dos Ventos encerra a jardinagem; prestador comunicado e aditivo em formalização pelo corporativo.</p></div>
+    <div class="card"><h3>Cancelamento de jardinagem</h3><p>Pontal dos Ventos encerrou a jardinagem; o prestador deu ciência do encerramento do contrato e o corporativo formaliza por e-mail e aditivo. Demanda encerrada.</p></div>
     <div class="card"><h3>Vidros em altura</h3><p>Grupo Fibra vai providenciar as certidões; contrato em atualização.</p></div>
   </div>
 </section>
@@ -198,9 +194,9 @@ img.shot{height:auto;max-width:100%}
     <tr><td>Controle de vencimentos em planilha separada</td><td>Transferido para a planilha mestra, com cores e fórmulas automáticas</td><td><span class="pill p-ok">Resolvido</span></td></tr>
     <tr><td>Cronograma anual do L'Essence Suíça</td><td>Versão corrigida enviada e aceita</td><td><span class="pill p-ok">Resolvido</span></td></tr>
     <tr><td>Periodicidade da caixa de gordura no Talk Marista</td><td>Esclarecida: mensal, dia 28</td><td><span class="pill p-ok">Resolvido</span></td></tr>
-    <tr><td>Periodicidade da caixa de gordura na Praça Sudoeste</td><td>Aguardando confirmação do coordenador e do corporativo</td><td><span class="pill p-wr">Em andamento</span></td></tr>
+    <tr><td>Periodicidade da caixa de gordura na Praça Sudoeste</td><td>Negociado com o cliente um teste de periodicidade bimestral, em vigor até hoje</td><td><span class="pill p-ok">Resolvido</span></td></tr>
     <tr><td>Orçamento de caixa d'água, gordura e dedetização (Now / Ilhas Cayman) sem retorno do prestador</td><td>Prestador enviou a proposta em 23/10; consolidação por pacote em andamento</td><td><span class="pill p-ok">Resolvido</span></td></tr>
-    <tr><td>Cancelamento da jardinagem do Pontal dos Ventos</td><td>Prestador informado; corporativo formalizará por e-mail e aditivo</td><td><span class="pill p-wr">Em andamento</span></td></tr>
+    <tr><td>Cancelamento da jardinagem do Pontal dos Ventos</td><td>Prestador deu ciência do encerramento do contrato; corporativo formaliza por e-mail e aditivo</td><td><span class="pill p-ok">Resolvido</span></td></tr>
     <tr><td>Demandas do dia sem visão consolidada</td><td>Painel semanal e conversas agrupadas por solução</td><td><span class="pill p-ok">Resolvido</span></td></tr>
   </table>
 </section>
@@ -316,7 +312,7 @@ img.shot{height:auto;max-width:100%}
   <div class="grid">
     <div class="card"><h3>Sistema web</h3><ul><li>Aplicar correções da auditoria (segurança, escrita na planilha, fórmulas).</li><li>Novo visual com identidade mais clara e moderna.</li><li>Painel de documentação visível à Diretoria e ao titular.</li></ul></div>
     <div class="card"><h3>Prestadores</h3><ul><li>Cobrar certidões e documentos vencidos ou pendentes.</li><li>Concluir pasta do Grupo Fibra e da Rocha Dedetização.</li><li>Corrigir divergência do CNPJ da TN.</li></ul></div>
-    <div class="card"><h3>Clientes</h3><ul><li>Consolidar orçamentos por pacote (Now, Ilhas Cayman, Villa de Leyva e The Prime) e retornar ao Comercial.</li><li>Formalizar o aditivo do Pontal dos Ventos.</li><li>Fechar periodicidades em aberto.</li><li>Eventos de 2027 criados em janeiro.</li></ul></div>
+    <div class="card"><h3>Clientes</h3><ul><li>Consolidar orçamentos por pacote (Now, Ilhas Cayman, Villa de Leyva e The Prime) e retornar ao Comercial.</li><li>Eventos de 2027 criados em janeiro.</li></ul></div>
   </div>
 </section>
 
